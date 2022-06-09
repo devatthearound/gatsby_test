@@ -1,4 +1,8 @@
 var plugins = [{
+      name: 'gatsby-plugin-styled-components',
+      plugin: require('/Users/gaeun/Documents/GitHub/gatsby_test/node_modules/gatsby-plugin-styled-components/gatsby-ssr.js'),
+      options: {"plugins":[],"displayName":true,"fileName":true,"minify":true,"namespace":"","transpileTemplateLiterals":true,"topLevelImportPaths":[],"pure":false,"disableVendorPrefixes":false},
+    },{
       name: 'gatsby-plugin-image',
       plugin: require('/Users/gaeun/Documents/GitHub/gatsby_test/node_modules/gatsby-plugin-image/gatsby-ssr.js'),
       options: {"plugins":[]},

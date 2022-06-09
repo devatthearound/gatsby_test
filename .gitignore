@@ -1,1 +1,6 @@
 node_modules/
+public/
+.cache/
+.vscode/
+.env.development
+.env.prodction

@@ -849,6 +849,339 @@ type ContentfulImageCropFocus =
   | 'top_left'
   | 'top_right';
 
+type ContentfulLandingPage = ContentfulEntry & ContentfulReference & Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly contentful_id: Scalars['String'];
+  readonly createdAt: Maybe<Scalars['Date']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly logo: Maybe<ContentfulAsset>;
+  readonly node_locale: Scalars['String'];
+  readonly parent: Maybe<Node>;
+  readonly spaceId: Maybe<Scalars['String']>;
+  readonly sys: Maybe<ContentfulLandingPageSys>;
+  readonly title1: Maybe<Scalars['String']>;
+  readonly updatedAt: Maybe<Scalars['Date']>;
+};
+
+
+type ContentfulLandingPage_createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type ContentfulLandingPage_updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type ContentfulLandingPageConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ContentfulLandingPageEdge>;
+  readonly group: ReadonlyArray<ContentfulLandingPageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ContentfulLandingPage>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ContentfulLandingPageConnection_distinctArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+
+type ContentfulLandingPageConnection_groupArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ContentfulLandingPageConnection_maxArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+
+type ContentfulLandingPageConnection_minArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+
+type ContentfulLandingPageConnection_sumArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+type ContentfulLandingPageEdge = {
+  readonly next: Maybe<ContentfulLandingPage>;
+  readonly node: ContentfulLandingPage;
+  readonly previous: Maybe<ContentfulLandingPage>;
+};
+
+type ContentfulLandingPageFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'contentful_id'
+  | 'createdAt'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'logo.children'
+  | 'logo.children.children'
+  | 'logo.children.children.children'
+  | 'logo.children.children.id'
+  | 'logo.children.id'
+  | 'logo.children.internal.content'
+  | 'logo.children.internal.contentDigest'
+  | 'logo.children.internal.description'
+  | 'logo.children.internal.fieldOwners'
+  | 'logo.children.internal.ignoreType'
+  | 'logo.children.internal.mediaType'
+  | 'logo.children.internal.owner'
+  | 'logo.children.internal.type'
+  | 'logo.children.parent.children'
+  | 'logo.children.parent.id'
+  | 'logo.contentful_id'
+  | 'logo.createdAt'
+  | 'logo.description'
+  | 'logo.file.contentType'
+  | 'logo.file.details.size'
+  | 'logo.file.fileName'
+  | 'logo.file.url'
+  | 'logo.filename'
+  | 'logo.filesize'
+  | 'logo.gatsbyImage'
+  | 'logo.gatsbyImageData'
+  | 'logo.height'
+  | 'logo.id'
+  | 'logo.internal.content'
+  | 'logo.internal.contentDigest'
+  | 'logo.internal.description'
+  | 'logo.internal.fieldOwners'
+  | 'logo.internal.ignoreType'
+  | 'logo.internal.mediaType'
+  | 'logo.internal.owner'
+  | 'logo.internal.type'
+  | 'logo.mimeType'
+  | 'logo.node_locale'
+  | 'logo.parent.children'
+  | 'logo.parent.children.children'
+  | 'logo.parent.children.id'
+  | 'logo.parent.id'
+  | 'logo.parent.internal.content'
+  | 'logo.parent.internal.contentDigest'
+  | 'logo.parent.internal.description'
+  | 'logo.parent.internal.fieldOwners'
+  | 'logo.parent.internal.ignoreType'
+  | 'logo.parent.internal.mediaType'
+  | 'logo.parent.internal.owner'
+  | 'logo.parent.internal.type'
+  | 'logo.parent.parent.children'
+  | 'logo.parent.parent.id'
+  | 'logo.placeholderUrl'
+  | 'logo.publicUrl'
+  | 'logo.resize.height'
+  | 'logo.resize.src'
+  | 'logo.resize.width'
+  | 'logo.size'
+  | 'logo.spaceId'
+  | 'logo.sys.revision'
+  | 'logo.sys.type'
+  | 'logo.title'
+  | 'logo.updatedAt'
+  | 'logo.url'
+  | 'logo.width'
+  | 'node_locale'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id'
+  | 'spaceId'
+  | 'sys.contentType.sys.id'
+  | 'sys.contentType.sys.linkType'
+  | 'sys.contentType.sys.type'
+  | 'sys.revision'
+  | 'sys.type'
+  | 'title1'
+  | 'updatedAt';
+
+type ContentfulLandingPageFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly contentful_id: InputMaybe<StringQueryOperatorInput>;
+  readonly createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly logo: InputMaybe<ContentfulAssetFilterInput>;
+  readonly node_locale: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly spaceId: InputMaybe<StringQueryOperatorInput>;
+  readonly sys: InputMaybe<ContentfulLandingPageSysFilterInput>;
+  readonly title1: InputMaybe<StringQueryOperatorInput>;
+  readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
+};
+
+type ContentfulLandingPageGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ContentfulLandingPageEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<ContentfulLandingPageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ContentfulLandingPage>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ContentfulLandingPageGroupConnection_distinctArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+
+type ContentfulLandingPageGroupConnection_groupArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ContentfulLandingPageGroupConnection_maxArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+
+type ContentfulLandingPageGroupConnection_minArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+
+type ContentfulLandingPageGroupConnection_sumArgs = {
+  field: ContentfulLandingPageFieldsEnum;
+};
+
+type ContentfulLandingPageSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<ContentfulLandingPageFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
+type ContentfulLandingPageSys = {
+  readonly contentType: Maybe<ContentfulLandingPageSysContentType>;
+  readonly revision: Maybe<Scalars['Int']>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type ContentfulLandingPageSysContentType = {
+  readonly sys: Maybe<ContentfulLandingPageSysContentTypeSys>;
+};
+
+type ContentfulLandingPageSysContentTypeFilterInput = {
+  readonly sys: InputMaybe<ContentfulLandingPageSysContentTypeSysFilterInput>;
+};
+
+type ContentfulLandingPageSysContentTypeSys = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly linkType: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+};
+
+type ContentfulLandingPageSysContentTypeSysFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly linkType: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ContentfulLandingPageSysFilterInput = {
+  readonly contentType: InputMaybe<ContentfulLandingPageSysContentTypeFilterInput>;
+  readonly revision: InputMaybe<IntQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
 type ContentfulNutritionalSupplements = ContentfulEntry & ContentfulReference & Node & {
   readonly children: ReadonlyArray<Node>;
   readonly contentful_id: Scalars['String'];
@@ -3245,6 +3578,7 @@ type Query = {
   readonly allContentfulAsset: ContentfulAssetConnection;
   readonly allContentfulContentType: ContentfulContentTypeConnection;
   readonly allContentfulEntry: ContentfulEntryConnection;
+  readonly allContentfulLandingPage: ContentfulLandingPageConnection;
   readonly allContentfulNutritionalSupplements: ContentfulNutritionalSupplementsConnection;
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
@@ -3259,6 +3593,7 @@ type Query = {
   readonly contentfulAsset: Maybe<ContentfulAsset>;
   readonly contentfulContentType: Maybe<ContentfulContentType>;
   readonly contentfulEntry: Maybe<ContentfulEntry>;
+  readonly contentfulLandingPage: Maybe<ContentfulLandingPage>;
   readonly contentfulNutritionalSupplements: Maybe<ContentfulNutritionalSupplements>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
@@ -3294,6 +3629,14 @@ type Query_allContentfulEntryArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ContentfulEntrySortInput>;
+};
+
+
+type Query_allContentfulLandingPageArgs = {
+  filter: InputMaybe<ContentfulLandingPageFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ContentfulLandingPageSortInput>;
 };
 
 
@@ -3433,6 +3776,22 @@ type Query_contentfulEntryArgs = {
   internal: InputMaybe<InternalFilterInput>;
   node_locale: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_contentfulLandingPageArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  contentful_id: InputMaybe<StringQueryOperatorInput>;
+  createdAt: InputMaybe<DateQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  logo: InputMaybe<ContentfulAssetFilterInput>;
+  node_locale: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  spaceId: InputMaybe<StringQueryOperatorInput>;
+  sys: InputMaybe<ContentfulLandingPageSysFilterInput>;
+  title1: InputMaybe<StringQueryOperatorInput>;
+  updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
 
 

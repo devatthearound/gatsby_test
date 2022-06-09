@@ -799,6 +799,294 @@ enum ContentfulImageCropFocus {
   TOP_RIGHT
 }
 
+type ContentfulLandingPage implements ContentfulEntry & ContentfulReference & Node {
+  children: [Node!]!
+  contentful_id: String!
+  createdAt(
+    # Returns the difference between this date and the current time. Defaults to "milliseconds" but you can also pass in as the measurement "years", "months", "weeks", "days", "hours", "minutes", and "seconds".
+    difference: String
+
+    # Format the date using Moment.js' date tokens, e.g. `date(formatString: "YYYY MMMM DD")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+    formatString: String
+
+    # Returns a string generated with Moment.js' `fromNow` function
+    fromNow: Boolean
+
+    # Configures the locale Moment.js will use to format the date.
+    locale: String
+  ): Date
+  id: ID!
+  internal: Internal!
+  logo: ContentfulAsset
+  node_locale: String!
+  parent: Node
+  spaceId: String
+  sys: ContentfulLandingPageSys
+  title1: String
+  updatedAt(
+    # Returns the difference between this date and the current time. Defaults to "milliseconds" but you can also pass in as the measurement "years", "months", "weeks", "days", "hours", "minutes", and "seconds".
+    difference: String
+
+    # Format the date using Moment.js' date tokens, e.g. `date(formatString: "YYYY MMMM DD")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+    formatString: String
+
+    # Returns a string generated with Moment.js' `fromNow` function
+    fromNow: Boolean
+
+    # Configures the locale Moment.js will use to format the date.
+    locale: String
+  ): Date
+}
+
+type ContentfulLandingPageConnection {
+  distinct(field: ContentfulLandingPageFieldsEnum!): [String!]!
+  edges: [ContentfulLandingPageEdge!]!
+  group(field: ContentfulLandingPageFieldsEnum!, limit: Int, skip: Int): [ContentfulLandingPageGroupConnection!]!
+  max(field: ContentfulLandingPageFieldsEnum!): Float
+  min(field: ContentfulLandingPageFieldsEnum!): Float
+  nodes: [ContentfulLandingPage!]!
+  pageInfo: PageInfo!
+  sum(field: ContentfulLandingPageFieldsEnum!): Float
+  totalCount: Int!
+}
+
+type ContentfulLandingPageEdge {
+  next: ContentfulLandingPage
+  node: ContentfulLandingPage!
+  previous: ContentfulLandingPage
+}
+
+enum ContentfulLandingPageFieldsEnum {
+  children
+  children___children
+  children___children___children
+  children___children___children___children
+  children___children___children___id
+  children___children___id
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___children___parent___children
+  children___children___parent___id
+  children___id
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  children___parent___children
+  children___parent___children___children
+  children___parent___children___id
+  children___parent___id
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___parent___parent___children
+  children___parent___parent___id
+  contentful_id
+  createdAt
+  id
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
+  logo___children
+  logo___children___children
+  logo___children___children___children
+  logo___children___children___id
+  logo___children___id
+  logo___children___internal___content
+  logo___children___internal___contentDigest
+  logo___children___internal___description
+  logo___children___internal___fieldOwners
+  logo___children___internal___ignoreType
+  logo___children___internal___mediaType
+  logo___children___internal___owner
+  logo___children___internal___type
+  logo___children___parent___children
+  logo___children___parent___id
+  logo___contentful_id
+  logo___createdAt
+  logo___description
+  logo___file___contentType
+  logo___file___details___size
+  logo___file___fileName
+  logo___file___url
+  logo___filename
+  logo___filesize
+  logo___gatsbyImage @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  logo___gatsbyImageData @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  logo___height
+  logo___id
+  logo___internal___content
+  logo___internal___contentDigest
+  logo___internal___description
+  logo___internal___fieldOwners
+  logo___internal___ignoreType
+  logo___internal___mediaType
+  logo___internal___owner
+  logo___internal___type
+  logo___mimeType
+  logo___node_locale
+  logo___parent___children
+  logo___parent___children___children
+  logo___parent___children___id
+  logo___parent___id
+  logo___parent___internal___content
+  logo___parent___internal___contentDigest
+  logo___parent___internal___description
+  logo___parent___internal___fieldOwners
+  logo___parent___internal___ignoreType
+  logo___parent___internal___mediaType
+  logo___parent___internal___owner
+  logo___parent___internal___type
+  logo___parent___parent___children
+  logo___parent___parent___id
+  logo___placeholderUrl
+  logo___publicUrl
+  logo___resize___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  logo___resize___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  logo___resize___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  logo___size
+  logo___spaceId
+  logo___sys___revision
+  logo___sys___type
+  logo___title
+  logo___updatedAt
+  logo___url
+  logo___width
+  node_locale
+  parent___children
+  parent___children___children
+  parent___children___children___children
+  parent___children___children___id
+  parent___children___id
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___children___parent___children
+  parent___children___parent___id
+  parent___id
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  parent___parent___children
+  parent___parent___children___children
+  parent___parent___children___id
+  parent___parent___id
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___parent___parent___children
+  parent___parent___parent___id
+  spaceId
+  sys___contentType___sys___id
+  sys___contentType___sys___linkType
+  sys___contentType___sys___type
+  sys___revision
+  sys___type
+  title1
+  updatedAt
+}
+
+input ContentfulLandingPageFilterInput {
+  children: NodeFilterListInput
+  contentful_id: StringQueryOperatorInput
+  createdAt: DateQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  logo: ContentfulAssetFilterInput
+  node_locale: StringQueryOperatorInput
+  parent: NodeFilterInput
+  spaceId: StringQueryOperatorInput
+  sys: ContentfulLandingPageSysFilterInput
+  title1: StringQueryOperatorInput
+  updatedAt: DateQueryOperatorInput
+}
+
+type ContentfulLandingPageGroupConnection {
+  distinct(field: ContentfulLandingPageFieldsEnum!): [String!]!
+  edges: [ContentfulLandingPageEdge!]!
+  field: String!
+  fieldValue: String
+  group(field: ContentfulLandingPageFieldsEnum!, limit: Int, skip: Int): [ContentfulLandingPageGroupConnection!]!
+  max(field: ContentfulLandingPageFieldsEnum!): Float
+  min(field: ContentfulLandingPageFieldsEnum!): Float
+  nodes: [ContentfulLandingPage!]!
+  pageInfo: PageInfo!
+  sum(field: ContentfulLandingPageFieldsEnum!): Float
+  totalCount: Int!
+}
+
+input ContentfulLandingPageSortInput {
+  fields: [ContentfulLandingPageFieldsEnum]
+  order: [SortOrderEnum] = [ASC]
+}
+
+type ContentfulLandingPageSys {
+  contentType: ContentfulLandingPageSysContentType
+  revision: Int
+  type: String
+}
+
+type ContentfulLandingPageSysContentType {
+  sys: ContentfulLandingPageSysContentTypeSys
+}
+
+input ContentfulLandingPageSysContentTypeFilterInput {
+  sys: ContentfulLandingPageSysContentTypeSysFilterInput
+}
+
+type ContentfulLandingPageSysContentTypeSys {
+  id: String
+  linkType: String
+  type: String
+}
+
+input ContentfulLandingPageSysContentTypeSysFilterInput {
+  id: StringQueryOperatorInput
+  linkType: StringQueryOperatorInput
+  type: StringQueryOperatorInput
+}
+
+input ContentfulLandingPageSysFilterInput {
+  contentType: ContentfulLandingPageSysContentTypeFilterInput
+  revision: IntQueryOperatorInput
+  type: StringQueryOperatorInput
+}
+
 type ContentfulNutritionalSupplements implements ContentfulEntry & ContentfulReference & Node {
   children: [Node!]!
   contentful_id: String!
@@ -2929,6 +3217,7 @@ type Query {
   allContentfulAsset(filter: ContentfulAssetFilterInput, limit: Int, skip: Int, sort: ContentfulAssetSortInput): ContentfulAssetConnection!
   allContentfulContentType(filter: ContentfulContentTypeFilterInput, limit: Int, skip: Int, sort: ContentfulContentTypeSortInput): ContentfulContentTypeConnection!
   allContentfulEntry(filter: ContentfulEntryFilterInput, limit: Int, skip: Int, sort: ContentfulEntrySortInput): ContentfulEntryConnection!
+  allContentfulLandingPage(filter: ContentfulLandingPageFilterInput, limit: Int, skip: Int, sort: ContentfulLandingPageSortInput): ContentfulLandingPageConnection!
   allContentfulNutritionalSupplements(filter: ContentfulNutritionalSupplementsFilterInput, limit: Int, skip: Int, sort: ContentfulNutritionalSupplementsSortInput): ContentfulNutritionalSupplementsConnection!
   allDirectory(filter: DirectoryFilterInput, limit: Int, skip: Int, sort: DirectorySortInput): DirectoryConnection!
   allFile(filter: FileFilterInput, limit: Int, skip: Int, sort: FileSortInput): FileConnection!
@@ -2943,6 +3232,7 @@ type Query {
   contentfulAsset(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, description: StringQueryOperatorInput, file: ContentfulAssetFileFilterInput, filename: StringQueryOperatorInput, filesize: IntQueryOperatorInput, gatsbyImage: GatsbyImageDataQueryOperatorInput, gatsbyImageData: JSONQueryOperatorInput, height: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, mimeType: StringQueryOperatorInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput, placeholderUrl: StringQueryOperatorInput, publicUrl: StringQueryOperatorInput, resize: RemoteFileResizeFilterInput, size: IntQueryOperatorInput, spaceId: StringQueryOperatorInput, sys: ContentfulAssetSysFilterInput, title: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput, url: StringQueryOperatorInput, width: IntQueryOperatorInput): ContentfulAsset
   contentfulContentType(children: NodeFilterListInput, description: StringQueryOperatorInput, displayField: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, parent: NodeFilterInput, sys: ContentfulContentTypeSysFilterInput): ContentfulContentType
   contentfulEntry(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput): ContentfulEntry
+  contentfulLandingPage(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, logo: ContentfulAssetFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput, spaceId: StringQueryOperatorInput, sys: ContentfulLandingPageSysFilterInput, title1: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulLandingPage
   contentfulNutritionalSupplements(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, id: StringQueryOperatorInput, images: ContentfulAssetFilterListInput, internal: InternalFilterInput, name: StringQueryOperatorInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput, price: IntQueryOperatorInput, spaceId: StringQueryOperatorInput, sys: ContentfulNutritionalSupplementsSysFilterInput, updatedAt: DateQueryOperatorInput): ContentfulNutritionalSupplements
   directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
   file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, childrenImageSharp: ImageSharpFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
