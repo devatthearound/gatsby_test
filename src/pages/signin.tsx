@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React, { useState } from "react"
 import { AuthProvider, useAuth } from "../hooks/AuthProvider";
 
@@ -32,15 +33,16 @@ const SignInPage = () => {
             <form onSubmit={handlerOnSubmit}>
                 <div>
                     <label htmlFor="email">이메일 입력</label>
-                    <input type="text" name="email" value={form.email} onChange={handlerOnChange} placeholder="로그인 시 필요"/>
+                    <input type="text" name="email" value={form.email} onChange={handlerOnChange} placeholder="로그인 시 필요" />
                 </div>
                 <div>
                     <label htmlFor="password">비밀번호 입력</label>
-                    <input type="password" name="password" value={form.password} onChange={handlerOnChange} placeholder="영문,숫자,특수문자 포함 8자 이상"/>
+                    <input type="password" name="password" value={form.password} onChange={handlerOnChange} placeholder="영문,숫자,특수문자 포함 8자 이상" />
                 </div>
                 <button onClick={LoginOut}>로그아웃</button>
                 <button type="submit">제출</button>
             </form>
+            <Link to="/signup">회원가입 하기</Link>
         </>
     )
 }

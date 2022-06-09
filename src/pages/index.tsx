@@ -1,13 +1,8 @@
 import styled from "styled-components"
 import React from "react";
-import { useAuth } from "../hooks/AuthProvider";
 import Layout from "../components/Layout";
 
 const HomePage = () => {
-  const { user } = useAuth();
-
-  if (user)
-
     return (
       <Layout>
         <Wraper>

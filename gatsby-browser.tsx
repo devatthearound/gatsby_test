@@ -1,6 +1,7 @@
 import React from "react"
 import type { GatsbyBrowser } from "gatsby"
 import { AuthProvider } from "./src/hooks/AuthProvider"
+import { SMSAuthProvider } from "./src/hooks/SMSProvider"
 import AuthSateChanged from "./src/hooks/AuthStateChanged"
 
 import "firebase/auth"
@@ -12,11 +13,13 @@ export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
 }) => {
     return (
         <>
-            <AuthProvider>
-                <AuthSateChanged>
-                    {element}
-                </AuthSateChanged>
-            </AuthProvider>
+            {/* <AuthProvider> */}
+                <SMSAuthProvider>
+                    {/* <AuthSateChanged> */}
+                        {element}
+                    {/* </AuthSateChanged> */}
+                </SMSAuthProvider>
+            {/* </AuthProvider> */}
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import { useAuth } from "../hooks/AuthProvider"
 import { navigate } from "@reach/router"
+import { Link } from "gatsby"
 
 type Props = {
     children: React.ReactNode
@@ -8,7 +9,15 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
     const { user } = useAuth();
 
-    if (!user) navigate('/signin');
+    if (!user) {
+        return (
+            <>
+                <div>
+                    <Link to="/signin">로그인을 해주세요</Link>
+                </div>
+            </>
+        )
+    }
 
     return (
         <>
@@ -17,6 +26,7 @@ const Layout: React.FC<Props> = ({ children }) => {
             </div>
         </>
     )
+
 }
 
 export default Layout;

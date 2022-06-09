@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React, { useState } from "react"
 import { AuthProvider, useAuth } from "../hooks/AuthProvider";
 
@@ -42,6 +43,7 @@ const SignUpPage = () => {
 
                 <button type="submit">제출</button>
             </form>
+            <Link to="/signin">로그인 하기</Link>
         </>
     )
 }
