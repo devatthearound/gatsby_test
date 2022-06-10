@@ -13,13 +13,11 @@ export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
 }) => {
     return (
         <>
-            {/* <AuthProvider> */}
-                <SMSAuthProvider>
-                    {/* <AuthSateChanged> */}
-                        {element}
-                    {/* </AuthSateChanged> */}
-                </SMSAuthProvider>
-            {/* </AuthProvider> */}
+            <AuthProvider>
+                <AuthSateChanged>
+                    {element}
+                </AuthSateChanged>
+            </AuthProvider>
         </>
     )
 }

@@ -7,7 +7,7 @@
   "extensions": {
     "endpoints": {
       "default": {
-        "url": "http://localhost:8000/___graphql"
+        "url": "http://undefined:undefined/___graphql"
       }
     }
   }
