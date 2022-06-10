@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "path": "/community/[id]/",
+        "matchPath": "/community/:id"
+    }
+]

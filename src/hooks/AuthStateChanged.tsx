@@ -1,4 +1,4 @@
-import firebase from '../service/FirebaseConfig';
+import firebase from '../service/FBConfig';
 import { onAuthStateChanged, getAuth } from 'firebase/auth'
 import { useAuth } from './AuthProvider';
 import React, { useEffect, useState } from 'react';

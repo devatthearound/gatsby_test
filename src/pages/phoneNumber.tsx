@@ -1,6 +1,6 @@
 import { RecaptchaVerifier, getAuth, signInWithPhoneNumber } from "firebase/auth";
 import React, { useEffect, useState } from "react"
-import firebase from "../service/FirebaseConfig";
+import firebase from "../service/FBConfig";
 
 type LoginDTO = {
     phoneNumber: string

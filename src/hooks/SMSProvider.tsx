@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import SMSService from '../service/SMSService';
+import SMSService from '../service/FBSMSService';
 import { User, ApplicationVerifier, ConfirmationResult, RecaptchaVerifier } from 'firebase/auth';
 
 interface Value {
