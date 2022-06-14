@@ -10,7 +10,6 @@ exports.components = {
   "component---src-pages-community-index-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/community/index.tsx")),
   "component---src-pages-index-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/index.tsx")),
   "component---src-pages-login-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/login.tsx")),
-  "component---src-pages-phone-number-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/phoneNumber.tsx")),
   "component---src-pages-posting-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/posting.tsx")),
   "component---src-pages-signin-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/signin.tsx")),
   "component---src-pages-signup-tsx": preferDefault(require("/Users/gaeun/Documents/GitHub/gatsby_test/src/pages/signup.tsx")),

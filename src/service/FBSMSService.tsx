@@ -6,17 +6,11 @@ export const isBrowser = () => typeof window !== "undefined"
 
 export const getRecaptchaVerifier = () => isBrowser() && window.recaptchaVerifier
 
-window.recaptchaVerifier = new RecaptchaVerifier('sign-in-buttons', {
-    'size': 'invisible',
-    'callback': (response: any) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-    }
-}, firebaseAuth);
-
 const SMSService = {
     SignInWithPhoneNumber: async (phoneNumber: string) => {
         try {
-            const confirmationResult = await signInWithPhoneNumber(firebaseAuth, phoneNumber, window.recaptchaVerifier)
+            firebaseAuth.languageCode = 'ko';
+            const confirmationResult = await signInWithPhoneNumber(firebaseAuth, "+82" + phoneNumber, window.recaptchaVerifier)
             window.confirmationResult = confirmationResult;
         } catch (err: unknown) {
             if (err instanceof Error) {

@@ -12,7 +12,7 @@ const StorageService = {
             });
 
             return downloadUrlPromise
-            
+
         } catch (err: unknown) {
             if (err instanceof Error) {
                 console.log(err);

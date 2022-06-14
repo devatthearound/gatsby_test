@@ -1,50 +1,46 @@
-import { Link } from "gatsby";
 import React, { useState } from "react"
-import { AuthProvider, useAuth } from "../hooks/AuthProvider";
+import FBSMSService from '../service/FBSMSService';
+import PhoneNumberInputForm from "../container/PhoneNumberInputForm";
+import PhoneNumberAuthForm from "../container/PhoneNumberAuthForm";
 
-type LoginDTO = {
-    email: string
-    password: string
+type FormDTO = {
+    phoneNumber: string
+    code: string
 }
 
-const SignInPage = () => {
-    const { user, SignInWithEmailAndPassword, LoginOut } = useAuth();
-    console.log(user);
-    const [form, setForm] = useState<LoginDTO>({
-        email: '',
-        password: ''
+const SignIn = () => {
+    const smsService = FBSMSService;
+    const [form, setForm] = useState<FormDTO>({
+        phoneNumber: '',
+        code: ''
     });
 
     const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
         setForm({ ...form, [name]: value });
-
     }
 
-    const handlerOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        const res = await SignInWithEmailAndPassword(form.email, form.password);
+    const sendAuthCode = async () => {
+        const result = await smsService.SignInWithPhoneNumber(form.phoneNumber);
+        console.log(result);
     };
+
+    const verifiAuthCode = async () => {
+        const result = await smsService.ConfirmationResult(form.code);
+        console.log(result);
+    };
+
+    const hanlderOnSubmit = () => {
+
+    }
 
 
     return (
         <>
-            <form onSubmit={handlerOnSubmit}>
-                <div>
-                    <label htmlFor="email">이메일 입력</label>
-                    <input type="text" name="email" value={form.email} onChange={handlerOnChange} placeholder="로그인 시 필요" />
-                </div>
-                <div>
-                    <label htmlFor="password">비밀번호 입력</label>
-                    <input type="password" name="password" value={form.password} onChange={handlerOnChange} placeholder="영문,숫자,특수문자 포함 8자 이상" />
-                </div>
-                <button onClick={LoginOut}>로그아웃</button>
-                <button type="submit">제출</button>
-            </form>
-            <Link to="/signup">회원가입 하기</Link>
+            <PhoneNumberInputForm value={form.phoneNumber} onChange={handlerOnChange} sendAuthCode={sendAuthCode}/>
+            <PhoneNumberAuthForm value={form.code} onChange={handlerOnChange} verifiAuthCode={verifiAuthCode}/>
         </>
     )
 }
 
-export default SignInPage
+export default SignIn
